@@ -1,15 +1,16 @@
 class SheltersController < ApplicationController
   def index
-    @shelters = ['Dumb Friends League', 'Denver Samoyed Rescue']
+    @shelters = Shelter.all
   end
 
   def new
   end
 
   def create
+binding.pry
     shelter = Shelter.new({
-      title: params[:shelter][:title],
-      description: params[:shelter][:description]
+      name: params[:shelter][:name],
+      number_of_dogs: params[:shelter][:number_of_dogs]
       })
 
     shelter.save

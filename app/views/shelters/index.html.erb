@@ -1,5 +1,6 @@
-<h1>All shelters</h1>
+<h1>All Shelters</h1>
 
-<% @shelters.each do |shelter| %>
-  <h3><%= shelter %></h3>
+<% @shelter.each do |individual_shelter| %>
+  <h3><%= individual_shelter.name %></h3>
+  <p><%= individual_shelter.number_of_dogs %></p>
 <% end %>
