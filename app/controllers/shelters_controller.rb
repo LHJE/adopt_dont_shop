@@ -7,7 +7,7 @@ class SheltersController < ApplicationController
   end
 
   def create
-binding.pry
+
     shelter = Shelter.new({
       name: params[:shelter][:name],
       number_of_dogs: params[:shelter][:number_of_dogs]
