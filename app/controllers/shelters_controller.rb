@@ -7,5 +7,13 @@ class SheltersController < ApplicationController
   end
 
   def create
+    shelter = Shelter.new({
+      title: params[:shelter][:title],
+      description: params[:shelter][:description]
+      })
+
+    shelter.save
+
+    redirect_to '/shelters'
   end
 end
