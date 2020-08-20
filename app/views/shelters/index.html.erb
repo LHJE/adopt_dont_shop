@@ -1,9 +1,16 @@
 <h1>All Shelters</h1>
-
+<h2><a href="/shelters/new">New Shelter</a></h2>
 <% @shelters.each do |shelter| %>
   <h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3>
   <p><%= shelter.address %></p>
   <p><%= shelter.city %></p>
   <p><%= shelter.state %></p>
   <p><%= shelter.zip %></p>
+  <a href="/shelters/<%= shelter.id  %>/edit">Edit</a>
+  <form action="/shelters/<%= shelter.id %>" method="POST">
+  </br>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete"/>
+</form>
 <% end %>
