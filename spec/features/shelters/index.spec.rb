@@ -9,17 +9,16 @@ RSpec.describe "shelters index page", type: :feature do
                                 zip:      "80020"
                       )
     shelter_2 = Shelter.create( name:     "Denver Samoyed Rescue",
-                                address:  "208 S. Nile St.",
-                                city:     "Aurora",
+                                address:  "1145 S. Sherman St.",
+                                city:     "Denver",
                                 state:    "CO",
-                                zip:      "80020"
+                                zip:      "80112"
                       )
 
     visit "/shelters"
-
     expect(page).to have_content(shelter_1.name)
-    expect(page).to have_content("Number of Dogs: #{shelter_1.address}")
+    expect(page).to have_content("Address: #{shelter_1.address}")
     expect(page).to have_content(shelter_2.name)
-    expect(page).to have_content("Number of Dogs: #{shelter_2.address}")
+    expect(page).to have_content("Address:  #{shelter_2.address}")
   end
 end
