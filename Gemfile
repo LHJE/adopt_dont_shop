@@ -41,6 +41,7 @@ group :development, :test do
   gem 'launchy'
   gem 'simplecov'
   gem 'pry'
+  gem 'rspec-pride'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
