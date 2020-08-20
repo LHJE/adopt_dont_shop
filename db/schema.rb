@@ -17,7 +17,10 @@ ActiveRecord::Schema.define(version: 2020_08_19_220341) do
 
   create_table "shelters", force: :cascade do |t|
     t.string "name"
-    t.integer "number_of_dogs"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
   end
 
 end

@@ -2,5 +2,8 @@
 
 <% @shelters.each do |shelter| %>
   <h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3>
-  <p><%= shelter.number_of_dogs %></p>
+  <p><%= shelter.address %></p>
+  <p><%= shelter.city %></p>
+  <p><%= shelter.state %></p>
+  <p><%= shelter.zip %></p>
 <% end %>

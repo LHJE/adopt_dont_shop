@@ -9,7 +9,10 @@ class SheltersController < ApplicationController
   def create
     shelter = Shelter.new({
       name: params[:shelter][:name],
-      number_of_dogs: params[:shelter][:number_of_dogs]
+      address: params[:shelter][:address],
+      city: params[:shelter][:city],
+      state: params[:shelter][:state],
+      zip: params[:shelter][:zip]
       })
 
     shelter.save

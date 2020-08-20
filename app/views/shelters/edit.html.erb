@@ -3,6 +3,11 @@
   <input type="hidden" name="_method" value="PATCH" />
   <p>Edit</p>
   <input type='text' name='shelter[name]' value="<%= @shelter.name %>"/><br/>
-  <textarea name='shelter[number_of_dogs]'><%= @shelter.number_of_dogs %></textarea><br/>
+  <textarea name='shelter[address]'><%= @shelter.address %></textarea><br/>
+  <textarea name='shelter[city]'><%= @shelter.city %></textarea><br/>
+  <input type='submit'/>
+  <textarea name='shelter[state]'><%= @shelter.state %></textarea><br/>
+  <input type='submit'/>
+  <textarea name='shelter[zip]'><%= @shelter.zip %></textarea><br/>
   <input type='submit'/>
 </form>
