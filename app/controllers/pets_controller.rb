@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /pets
   # GET /pets.json
   def index
@@ -69,6 +69,6 @@ class PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:name, :age, :sex, :shelter_id, :adoptable, :image)
+      params.require(:pet).permit(:name, :age, :sex, :adoptable, :image)
     end
 end

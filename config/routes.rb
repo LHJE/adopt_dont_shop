@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :pets
+  resources :shelters
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   get '/', to: 'welcome#index'
+
   get '/shelters', to: 'shelters#index'
   get '/shelters/new', to: 'shelters#new'
   post '/shelters', to: 'shelters#create'
@@ -18,5 +21,4 @@ Rails.application.routes.draw do
   get '/pets/:id/edit', to: 'pets#edit'
   patch '/pets/:id', to: 'pets#update'
   delete '/pets/:id', to: 'pets#destroy'
-
 end

@@ -6,7 +6,6 @@ RSpec.describe "pets/show", type: :view do
       name: "Name",
       age: "Age",
       sex: "Sex",
-      shelter: 2,
       adoptable: false
     ))
   end
@@ -16,7 +15,6 @@ RSpec.describe "pets/show", type: :view do
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Age/)
     expect(rendered).to match(/Sex/)
-    expect(rendered).to match(/2/)
     expect(rendered).to match(/false/)
   end
 end
