@@ -1,18 +1,31 @@
+<p id="notice"><%= notice %></p>
+
 <a href="/shelters">Shelter Index</a> || <a href="/">Home</a> </br></br>
 
-<h1><%= @shelter.name %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @shelter.name %>
+</p>
 
-<p><%= @shelter.address %></p>
+<p>
+  <strong>Address:</strong>
+  <%= @shelter.address %>
+</p>
 
-<p><%= @shelter.city %></p>
+<p>
+  <strong>City:</strong>
+  <%= @shelter.city %>
+</p>
 
-<p><%= @shelter.state %></p>
+<p>
+  <strong>State:</strong>
+  <%= @shelter.state %>
+</p>
 
-<p><%= @shelter.zip %></p>
+<p>
+  <strong>Zip:</strong>
+  <%= @shelter.zip %>
+</p>
 
-<a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a><br/><br/>
-<form action="/shelters/<%= @shelter.id %>" method="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete"/>
-</form>
+<%= link_to 'Edit', edit_shelter_path(@shelter) %> |
+<%= link_to 'Back', shelters_path %>

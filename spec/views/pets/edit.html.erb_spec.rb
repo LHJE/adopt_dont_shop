@@ -6,7 +6,6 @@ RSpec.describe "pets/edit", type: :view do
       name: "MyString",
       age: "MyString",
       sex: "MyString",
-      shelter: 1,
       adoptable: false
     ))
   end
@@ -21,8 +20,6 @@ RSpec.describe "pets/edit", type: :view do
       assert_select "input[name=?]", "pet[age]"
 
       assert_select "input[name=?]", "pet[sex]"
-
-      assert_select "input[name=?]", "pet[shelter]"
 
       assert_select "input[name=?]", "pet[adoptable]"
     end
