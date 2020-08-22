@@ -1,48 +1,74 @@
 class SheltersController < ApplicationController
+  before_action :set_shelter, only: [:show, :edit, :update, :destroy]
+
+  # GET /shelters
+  # GET /shelters.json
   def index
     @shelters = Shelter.all
   end
 
-  def new
-  end
-
-  def create
-    shelter = Shelter.new({
-      name: params[:shelter][:name],
-      address: params[:shelter][:address],
-      city: params[:shelter][:city],
-      state: params[:shelter][:state],
-      zip: params[:shelter][:zip]
-      })
-
-    shelter.save
-
-    redirect_to '/shelters'
-  end
-
+  # GET /shelters/1
+  # GET /shelters/1.json
   def show
-    @shelter = Shelter.find(params[:id])
   end
 
+  # GET /shelters/new
+  def new
+    @shelter = Shelter.new
+  end
+
+  # GET /shelters/1/edit
   def edit
-    @shelter = Shelter.find(params[:id])
   end
 
+  # POST /shelters
+  # POST /shelters.json
+  def create
+    @shelter = Shelter.new(shelter_params)
+
+    respond_to do |format|
+      if @shelter.save
+        format.html { redirect_to @shelter, notice: 'Shelter was successfully created.' }
+        format.json { render :show, status: :created, location: @shelter }
+      else
+        format.html { render :new }
+        format.json { render json: @shelter.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /shelters/1
+  # PATCH/PUT /shelters/1.json
   def update
-    shelter = Shelter.find(params[:id])
-    shelter.update({
-      name: params[:shelter][:name],
-      address: params[:shelter][:address],
-      city: params[:shelter][:city],
-      state: params[:shelter][:state],
-      zip: params[:shelter][:zip]
-      })
-    shelter.save
-    redirect_to "/shelters/#{shelter.id}"
+    respond_to do |format|
+      if @shelter.update(shelter_params)
+        format.html { redirect_to @shelter, notice: 'Shelter was successfully updated.' }
+        format.json { render :show, status: :ok, location: @shelter }
+      else
+        format.html { render :edit }
+        format.json { render json: @shelter.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
+  # DELETE /shelters/1
+  # DELETE /shelters/1.json
   def destroy
-    Shelter.destroy(params[:id])
-    redirect_to '/shelters'
+    @shelter.destroy
+    respond_to do |format|
+      format.html { redirect_to shelters_url, notice: 'Shelter was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_shelter
+      @shelter = Shelter.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def shelter_params
+      params.require(:shelter).permit(:name, :address, :city, :state, :zip)
+    end
 end
