@@ -2,7 +2,7 @@
 </br>
 <a href="/pets">Back</a>
 
-<form action="/pets" method="post">
+<!-- <form action="/pets" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Enter a new pet:</p>
   Name: </br>
@@ -16,4 +16,34 @@
   Image [find a way to upload images here]: </br>
   <textarea name='pet[image]'></textarea><br/></br>
   <input type='submit'/>
-</form>
+</form> -->
+<%= form_for @pet, html: { multipart: true } do |f| %>
+  <% if @pet.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@pet.errors.count, "error")} prohibited this pet from being saved:" %>
+      </h2>
+      <ul>
+        <% @pet.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Upload Photo', class: 'btn btn-default' %>
+  </div>
+<% end %>

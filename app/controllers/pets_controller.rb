@@ -4,10 +4,11 @@ class PetsController < ApplicationController
   end
 
   def new
+    @pet = Pet.new
   end
 
   def create
-    pet = Pet.new({
+    @pet = Pet.new({
       image: params[:pet][:image],
       name: params[:pet][:name],
       age: params[:pet][:age],
@@ -15,8 +16,14 @@ class PetsController < ApplicationController
       shelter_id: params[:pet][:shelter_id]
       })
     pet.save
-
-    redirect_to '/pets'
+    binding.pry
+    if @pet.save
+      flash[:notice] = "Successfully added new photo!"
+      redirect_to '/pets'
+    else
+      flash[:alert] = "Error adding new photo!"
+      render :new
+    end
   end
 
   def show

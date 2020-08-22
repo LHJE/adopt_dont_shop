@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
 
   #Create action ensures that submitted photo gets created if it meets the requirements
   def create
-  @photo = Photo.new(photo_params)
+    @photo = Photo.new(photo_params)
     if @photo.save
       flash[:notice] = "Successfully added new photo!"
       redirect_to root_path
