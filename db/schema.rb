@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_08_22_023733) do
     t.string "age"
     t.string "sex"
     t.integer "shelter_id"
+    t.boolean "adoptable"
   end
 
   create_table "shelters", force: :cascade do |t|
