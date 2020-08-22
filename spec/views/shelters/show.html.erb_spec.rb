@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "shelters/show", type: :view do
+RSpec.describe 'shelters/show', type: :view do
   before(:each) do
     @shelter = assign(:shelter, Shelter.create!(
-      name: "Name",
-      address: "Address",
-      city: "City",
-      state: "State",
-      zip: "Zip"
-    ))
+                                  name: 'Name',
+                                  address: 'Address',
+                                  city: 'City',
+                                  state: 'State',
+                                  zip: 'Zip'
+                                ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Address/)

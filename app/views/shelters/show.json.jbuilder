@@ -1,1 +1,1 @@
-json.partial! "shelters/shelter", shelter: @shelter
+json.partial! 'shelters/shelter', shelter: @shelter
