@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<a href="/pets">Pet Index</a> || <a href="/">Home</a> </br></br>
+
 <p>
   <strong>Name:</strong>
   <%= @pet.name %>
 </p>
+
+<div style="width:500px; height:auto">
+<%= image_tag(@pet.image, style:"width:100%") %>
+</div>
 
 <p>
   <strong>Age:</strong>
