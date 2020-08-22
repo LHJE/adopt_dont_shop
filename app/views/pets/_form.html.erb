@@ -16,6 +16,8 @@
     <%= form.text_field :name %>
   </div>
 
+
+
   <div class="field">
     <%= form.label :age %>
     <%= form.text_field :age %>
@@ -35,6 +37,11 @@
     <%= form.label :adoptable %>
     <%= form.check_box :adoptable %>
   </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div></br>
 
   <div class="actions">
     <%= form.submit %>
