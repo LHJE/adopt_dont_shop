@@ -5,7 +5,6 @@ class CreatePet < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :age
       t.string :sex
-      t.integer :shelter_id
       t.boolean :adoptable
     end
   end
