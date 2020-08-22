@@ -1,5 +1,5 @@
 class SheltersController < ApplicationController
-  before_action :set_shelter, only: [:show, :edit, :update, :destroy]
+  before_action :set_shelter, only: %i[show edit update destroy]
 
   # GET /shelters
   # GET /shelters.json
@@ -9,8 +9,7 @@ class SheltersController < ApplicationController
 
   # GET /shelters/1
   # GET /shelters/1.json
-  def show
-  end
+  def show; end
 
   # GET /shelters/new
   def new
@@ -18,8 +17,7 @@ class SheltersController < ApplicationController
   end
 
   # GET /shelters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /shelters
   # POST /shelters.json
@@ -62,13 +60,14 @@ class SheltersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_shelter
-      @shelter = Shelter.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def shelter_params
-      params.require(:shelter).permit(:name, :address, :city, :state, :zip)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_shelter
+    @shelter = Shelter.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def shelter_params
+    params.require(:shelter).permit(:name, :address, :city, :state, :zip)
+  end
 end
