@@ -14,7 +14,6 @@ class PetsController < ApplicationController
       sex: params[:pet][:sex],
       shelter_id: params[:pet][:shelter_id]
       })
-
     pet.save
 
     redirect_to '/pets'
@@ -22,6 +21,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    binding.pry
   end
 
   def edit
