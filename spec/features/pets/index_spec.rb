@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "pets index page" do
   before :each do
-    @pet_1 = Pet.create(  image:      "image of some sort",
+    @pet_1 = Pet.create(  image:      "pup1.jpeg",
                           name:       "Eureka",
                           age:        "3",
                           sex:        "M",
                           shelter_id: 1
                         )
-    @pet_2 = Pet.create(  image:      "image of some sort",
+    @pet_2 = Pet.create(  image:      "//img['pup2.jpeg']",
                           name:       "Kadfly",
                           age:        "5",
                           sex:        "F",
@@ -18,12 +18,13 @@ RSpec.describe "pets index page" do
 
   it "can see all pets attributes" do
     visit "/pets"
+  expect(page).to have_xpath("//img['pup1.jpeg']")
   expect(page).to have_content(@pet_1.image)
   expect(page).to have_content(@pet_1.name)
   expect(page).to have_content(@pet_1.age)
   expect(page).to have_content(@pet_1.sex)
   expect(page).to have_content(@pet_1.shelter_id)
-  expect(page).to have_content(@pet_2.image)
+  expect(page).to have_xpath("//img['pup2.jpeg']")
   expect(page).to have_content(@pet_2.name)
   expect(page).to have_content(@pet_2.age)
   expect(page).to have_content(@pet_2.sex)
