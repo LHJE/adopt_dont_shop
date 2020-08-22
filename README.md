@@ -227,7 +227,7 @@ Then I see each Pet that can be adopted from that Shelter with that shelter_id i
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 9, Pet Show
 
@@ -243,8 +243,8 @@ Then I see the pet with that id including the pet's:
 ```
 
 ```
-[ ] done
 
+[ ] done
 User Story 10, Shelter Pet Creation
 
 As a visitor
@@ -266,7 +266,7 @@ and I am redirected to the Shelter Pets Index page where I can see the new pet l
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 11, Pet Update
 
@@ -287,7 +287,7 @@ and I am redirected to the Pet Show page where I see the Pet's updated informati
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 12, Pet Delete
 
@@ -306,7 +306,7 @@ and I am redirected to the pet index page where I no longer see this pet
 Users should be able to use the site easily. This means making sure there are links/buttons to reach all parts of the site and the styling/layout is sensible.
 
 ```
-[ ] done
+[x] done
 
 User Story 13, Shelter Update From Shelter Index Page
 
