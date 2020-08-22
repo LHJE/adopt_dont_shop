@@ -21,7 +21,6 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-    binding.pry
   end
 
   def edit
