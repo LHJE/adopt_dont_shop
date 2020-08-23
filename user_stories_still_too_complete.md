@@ -89,17 +89,6 @@ I see a count of the number of pets at this shelter
 ```
 [ ] done
 
-User Story 24, Adoptable Pets Display First
-
-As a visitor
-When I visit a shelter pets index or a pets index page
-I see adoptable pets listed before pets whose adoption status is pending
-
-```
-
-```
-[ ] done
-
 User Story 25, Pet Filter by Adoptable Status
 
 As a visitor
