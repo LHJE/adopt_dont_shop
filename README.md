@@ -95,7 +95,7 @@ BE Mod 2 Week 1 Solo Project
 ## User Stories
 
 ```
-[ ] done
+[x] done  [deployed but nooot working there yet!]
 
 User Story 1, Deploy your application to Heroku
 
