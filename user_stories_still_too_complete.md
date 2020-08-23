@@ -4,19 +4,6 @@
 ```
 [ ] done
 
-User Story 1, Deploy your application to Heroku
-
-As a visitor or user of the site
-I will perform all user stories
-By visiting the application on Heroku.
-Localhost is fine for development, but
-the application must be hosted on Heroku.
-```
-
-
-```
-[ ] done
-
 User Story 8, Shelter Pets Index
 
 As a visitor
