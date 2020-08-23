@@ -10,6 +10,7 @@
       <th>|Name|</th>
       <th>|Approximate Age|</th>
       <th>|Sex|</th>
+      <th>|Shelter ID|</th>
       <th>|Adoptable|</th>
       <th colspan="3"></th>
     </tr>
@@ -21,6 +22,7 @@
         <td><%= pet.name %></td>
         <td><%= pet.age %></td>
         <td><%= pet.sex %></td>
+        <td><%= pet.shelters_id %></td>
         <td><%= pet.adoptable %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
