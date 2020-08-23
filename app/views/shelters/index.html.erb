@@ -26,9 +26,9 @@
         <td><%= shelter.city %></td>
         <td><%= shelter.state %></td>
         <td><%= shelter.zip %></td>
-        <td><%= link_to 'Show', shelter %></td>
-        <td><%= link_to 'Edit', edit_shelter_path(shelter) %></td>
-        <td><%= link_to 'Delete', shelter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '|  Show  |', shelter %></td>
+        <td><%= link_to '|  Edit  |', edit_shelter_path(shelter) %></td>
+        <td><%= link_to '|  Delete  |', shelter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
